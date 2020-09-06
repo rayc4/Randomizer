@@ -3,8 +3,6 @@ package com.example.randomizer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +12,9 @@ import android.widget.Button;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragmentX;
+
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 
 
 /**
@@ -84,12 +85,17 @@ public class YoutubeFragment extends Fragment implements View.OnClickListener, Y
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-        System.out.println("success");
-        youTubePlayer.loadVideo("dQw4w9WgXcQ");
+        String id = null;
+        try {
+            id = YouTubeAPI.getId(50L);
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
+        youTubePlayer.loadVideo(id);
     }
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-        System.out.println("Failed");
+
     }
 }

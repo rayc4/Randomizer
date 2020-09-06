@@ -15,7 +15,19 @@
 
     <FrameLayout
         android:id="@+id/frame_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/youtube_button"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/youtube_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/youtube_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:text="Chooses random video from top 50 in YouTube trending" />
 
 </RelativeLayout>

@@ -1,17 +1,13 @@
 package com.example.randomizer;
 
 import android.content.res.Resources;
-import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Animatable2;
-import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +20,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CoinFragment#newInstance} factory method to
@@ -81,6 +77,7 @@ public class CoinFragment extends Fragment implements View.OnClickListener {
     private Drawable tails_drawable;
     private Animatable2 anim;
     private Animatable2.AnimationCallback callback;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
